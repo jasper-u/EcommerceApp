@@ -1,0 +1,20 @@
+﻿@model Category
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class=" card-header text-primary">Create Category</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label><br />
+            <input asp-for="Name" class="form-conrtol" />
+        </div>
+                <div class="mb-3">
+            <label asp-for="DisplayOrder"></label><br />
+            <input asp-for="DisplayOrder" class="form-conrtol" />
+        </div><br /><br />
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button> &nbsp;
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+    </div>
+</form>

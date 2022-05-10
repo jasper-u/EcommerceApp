@@ -1,4 +1,4 @@
-//010 Bootswatch Theme
+//013 Demo - Create Category
 
 using EcommerceAppWeb.Data;
 using Microsoft.EntityFrameworkCore;
