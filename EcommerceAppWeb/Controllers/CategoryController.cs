@@ -36,6 +36,7 @@ namespace EcommerceAppWeb.Controllers
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
+                TempData["Success"] = "New category is created succssfully";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -69,6 +70,7 @@ namespace EcommerceAppWeb.Controllers
             {
                 _db.Categories.Update(obj);
                 _db.SaveChanges();
+                TempData["Success"] = "Category updated succssfully";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -100,6 +102,7 @@ namespace EcommerceAppWeb.Controllers
             }
                 _db.Categories.Remove(obj);
                 _db.SaveChanges();
+                TempData["Success"] = "Category was succssfully deleted";
                 return RedirectToAction("Index");
             
         }
