@@ -28,6 +28,10 @@ namespace EcommerceAppWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
+            if (obj.Name == obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("CustomError", "Name and DisplayOrder can not be the same");
+            }
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
