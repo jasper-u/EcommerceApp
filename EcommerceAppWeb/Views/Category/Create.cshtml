@@ -8,11 +8,14 @@
         </div>
         <div class="mb-3">
             <label asp-for="Name"></label><br />
-            <input asp-for="Name" class="form-conrtol" />
+            <input asp-for="Name" class="form-conrtol" /><br />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
                 <div class="mb-3">
             <label asp-for="DisplayOrder"></label><br />
-            <input asp-for="DisplayOrder" class="form-conrtol" />
+            <input asp-for="DisplayOrder" class="form-conrtol" /><br />
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+
         </div><br /><br />
         <button type="submit" class="btn btn-primary" style="width:150px">Create</button> &nbsp;
         <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
