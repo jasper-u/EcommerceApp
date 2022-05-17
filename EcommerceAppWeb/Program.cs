@@ -1,6 +1,6 @@
 //013 Demo - Create Category
 
-using EcommerceAppWeb.Data;
+using EcommerceApp.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
