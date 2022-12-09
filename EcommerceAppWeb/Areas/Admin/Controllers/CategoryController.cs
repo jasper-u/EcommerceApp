@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAppWeb.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
