@@ -1,0 +1,24 @@
+﻿@model CoverType
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class=" card-header text-primary">Create Covertype</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name"></label><br />
+            <input asp-for="Name" class="form-conrtol" /><br />
+            <span asp-validation-for="Name" class="text-danger"></span>
+<br /><br />
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button> &nbsp;
+        <a asp-controller="CoverType" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
