@@ -20,45 +20,27 @@ namespace EcommerceAppWeb.Controllers
             return View(objCoverTypeList);
         }
 
+        
         //GET
-        public IActionResult Create()
+        public IActionResult Upsert(int? id)
         {
-            return View();
+            Product product = new Product();
+            if (id==null || id == 0)
+            {
+                //Create Product
+                return View(product);
+            }
+            else
+            {
+                //Update Product
+            }
+
+            return View(product);
         }
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(CoverType obj)
-        {
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.CoverType.Add(obj);
-                _unitOfWork.Save();
-                TempData["Success"] = "New covertype is created succssfully";
-                return RedirectToAction("Index");
-            }
-            return View(obj);
-        }
-
-        //GET
-        public IActionResult Edit(int? id)
-        {
-            if(id==null || id == 0)
-            {
-                return NotFound();
-            }
-            var coverTypeFromDbFirst = _unitOfWork.CoverType.GetFirstOrDefault(u=>u.Id==id);
-
-            if (coverTypeFromDbFirst == null)
-            {
-                return NotFound();
-            }
-            return View(coverTypeFromDbFirst);
-        }
-        //POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(CoverType obj)
+        public IActionResult Upsert(CoverType obj)
         {
             if (ModelState.IsValid)
             {
